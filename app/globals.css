@@ -1,0 +1,352 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --ejay-cream: #fff4c9;
+  --ejay-gold: #caa34a;
+  --ejay-gold-deep: #8c6818;
+  --ejay-bronze: #5d4210;
+  --ejay-blue: #071f66;
+  --ejay-blue-mid: #0b2f90;
+  --ejay-blue-line: #1849b8;
+  --ejay-text: #f8fbff;
+  --ejay-text-dim: #9db7e6;
+  --ejay-green: #7dff72;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #1a1206;
+  color: var(--ejay-text);
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-size: 11px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.ejay-chrome {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255, 246, 190, 0.5), transparent 20%),
+    linear-gradient(180deg, #f3d77a 0%, #c59a38 14%, #8a6417 44%, #d0ad55 76%, #60430f 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.45);
+}
+
+.ejay-title-bar {
+  background: linear-gradient(90deg, #06134b 0%, #1544b4 38%, #3775de 50%, #1544b4 62%, #06134b 100%);
+  border: 2px solid;
+  border-color: #f8e7a5 #3e2b09 #3e2b09 #f8e7a5;
+  color: #fff;
+  text-shadow: 1px 1px 0 #00113a;
+}
+
+.ejay-inset {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(68, 117, 226, 0.15), transparent 35%),
+    linear-gradient(180deg, var(--ejay-blue-mid) 0%, var(--ejay-blue) 100%);
+  border: 2px solid;
+  border-color: #3c2608 #fff0b8 #fff0b8 #3c2608;
+  border-radius: 10px;
+  box-shadow:
+    inset 2px 2px 10px rgba(0, 0, 0, 0.65),
+    0 2px 3px rgba(0, 0, 0, 0.35);
+}
+
+.ejay-panel-label {
+  background: linear-gradient(180deg, #fff0b8 0%, #d7b554 45%, #9b731d 100%);
+  border: 1px solid #5c400f;
+  color: #2f1b03;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.ejay-btn {
+  background: linear-gradient(180deg, #fff3c8 0%, #dcc05d 48%, #9c741e 100%);
+  border: 2px solid;
+  border-color: #fff8df #4d3308 #4d3308 #fff8df;
+  border-radius: 7px;
+  color: #241400;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 900;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+  transition: transform 0.08s, filter 0.12s;
+}
+
+.ejay-btn:hover:not(:disabled) {
+  filter: brightness(1.12);
+}
+
+.ejay-btn:active:not(:disabled),
+.ejay-btn-pressed {
+  border-color: #4d3308 #fff8df #fff8df #4d3308;
+  transform: translateY(1px);
+}
+
+.ejay-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.ejay-btn-transport {
+  align-items: center;
+  display: inline-flex;
+  height: 34px;
+  justify-content: center;
+  padding: 0;
+  width: 38px;
+}
+
+.ejay-btn-play {
+  align-items: center;
+  background: linear-gradient(180deg, #dcffba 0%, #59d84f 48%, #167b22 100%);
+  border-color: #f2ffe8 #063c0a #063c0a #f2ffe8;
+  border-radius: 999px;
+  box-shadow: 0 0 18px rgba(125, 255, 114, 0.45);
+  color: #063c0a;
+  display: inline-flex;
+  height: 44px;
+  justify-content: center;
+  width: 52px;
+}
+
+.ejay-btn-stop {
+  background: linear-gradient(180deg, #ffc7c7 0%, #eb4a4a 50%, #941818 100%);
+  border-color: #ffeaea #400909 #400909 #ffeaea;
+  color: #330202;
+}
+
+.ejay-btn-record {
+  background: linear-gradient(180deg, #ffb8b8 0%, #df2424 45%, #8f1010 100%);
+  border: 2px solid;
+  border-color: #ffe3e3 #3a0808 #3a0808 #ffe3e3;
+  color: #fff;
+  font-weight: 900;
+  text-shadow: 1px 1px 0 #510606;
+}
+
+.ejay-count-in {
+  text-shadow: 0 0 18px rgba(255, 74, 74, 0.9), 2px 2px 0 #3a0808;
+}
+
+.ejay-transport-pill {
+  align-items: center;
+  background: linear-gradient(180deg, #0e2a82, #061850);
+  border: 2px solid;
+  border-color: #fff0b8 #4d3308 #4d3308 #fff0b8;
+  border-radius: 999px;
+  display: flex;
+  gap: 5px;
+  padding: 6px 9px;
+}
+
+.ejay-cell-empty {
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(64, 118, 220, 0.28) 8px, rgba(64, 118, 220, 0.28) 9px),
+    linear-gradient(180deg, rgba(10, 39, 126, 0.92), rgba(4, 21, 83, 0.95));
+  border-radius: 0;
+  transition: background 0.15s, box-shadow 0.15s, filter 0.15s;
+}
+
+.ejay-cell-empty:hover {
+  background-color: rgba(71, 127, 240, 0.28);
+  box-shadow: inset 0 0 0 2px rgba(255, 238, 145, 0.35);
+}
+
+.ejay-drag-over {
+  animation: ejayPulse 0.65s infinite alternate;
+  box-shadow: inset 0 0 0 3px #fff07b, inset 0 0 28px rgba(255, 240, 123, 0.32);
+}
+
+.ejay-ai-hint-cell {
+  animation: ejayPulse 0.9s infinite alternate;
+  box-shadow: inset 0 0 0 3px rgba(125, 255, 114, 0.9), inset 0 0 30px rgba(125, 255, 114, 0.25);
+}
+
+.ejay-invalid-drop {
+  animation: ejayShake 0.28s linear;
+  box-shadow: inset 0 0 0 3px #ff6666;
+}
+
+.ejay-block {
+  border: 2px solid;
+  border-color: rgba(255, 255, 255, 0.65) rgba(0, 0, 0, 0.45) rgba(0, 0, 0, 0.45) rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.48);
+  margin: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ejay-block::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.32), transparent);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.ejay-block-placed {
+  animation: ejayPop 0.22s ease-out;
+}
+
+.ejay-block-drums {
+  background: linear-gradient(180deg, #fff6b2 0%, #e9d15c 48%, #ba9425 100%);
+  color: #4d3900;
+}
+
+.ejay-block-bass {
+  background: linear-gradient(180deg, #d9ffc8 0%, #6edc5a 48%, #249438 100%);
+  color: #07360e;
+}
+
+.ejay-block-synth {
+  background: linear-gradient(180deg, #c8ecff 0%, #64b6e9 48%, #236fac 100%);
+  color: #06284d;
+}
+
+.ejay-block-guitar {
+  background: linear-gradient(180deg, #ffd7bd 0%, #ef985f 48%, #bd5524 100%);
+  color: #431803;
+}
+
+.ejay-playhead-col {
+  background: rgba(125, 255, 114, 0.07);
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 2px rgba(125, 255, 114, 0.9), inset 0 0 24px rgba(125, 255, 114, 0.22);
+}
+
+.ejay-ruler {
+  background: linear-gradient(180deg, #fff0b8 0%, #d3ae4e 45%, #8e6819 100%);
+  border: 2px solid;
+  border-color: #fff8df #4d3308 #4d3308 #fff8df;
+}
+
+.ejay-ruler-tick {
+  border-left: 1px solid #5c400f;
+  color: #2f1b03;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.ejay-wave-bars {
+  align-items: flex-end;
+  display: flex;
+  gap: 2px;
+  height: 19px;
+  justify-content: center;
+  margin-top: 4px;
+  opacity: 0.65;
+}
+
+.ejay-wave-bars span {
+  background: currentColor;
+  border-radius: 1px;
+  width: 3px;
+}
+
+.ejay-ai-bar {
+  background: linear-gradient(180deg, #d9b550 0%, #8e6819 100%);
+  border-top: 2px solid #4d3308;
+}
+
+.ejay-input {
+  background: #061850;
+  border: 2px solid;
+  border-color: #3c2608 #fff0b8 #fff0b8 #3c2608;
+  border-radius: 5px;
+  color: #f8fbff;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.ejay-input:focus {
+  border-color: #1849b8 #cce4ff #cce4ff #1849b8;
+  outline: none;
+}
+
+.ejay-status-bubble {
+  animation: ejayPop 0.22s ease-out;
+  background: linear-gradient(180deg, #fff0b8, #d7b554);
+  border: 2px solid;
+  border-color: #fff8df #4d3308 #4d3308 #fff8df;
+  color: #2f1b03;
+  font-weight: 900;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.ejay-fader-track {
+  background: linear-gradient(90deg, #102057, #030a24, #102057);
+  border: 1px solid #3c2608;
+  height: 72px;
+  position: relative;
+  width: 18px;
+}
+
+.ejay-fader-fill {
+  background: linear-gradient(0deg, #0a4cff, #69d2ff);
+  border-top: 1px solid #c7f2ff;
+  bottom: 0;
+  left: 3px;
+  position: absolute;
+  right: 3px;
+}
+
+.ejay-cartridge {
+  background: linear-gradient(180deg, #173f9d 0%, #0b286f 55%, #061850 100%);
+  border: 2px solid;
+  border-color: #6fa8ff #03113f #03113f #6fa8ff;
+  color: #f5e6c8;
+}
+
+.ejay-cartridge-dragging {
+  filter: brightness(1.18);
+  transform: rotate(-2deg) scale(1.03);
+}
+
+@keyframes ejayPulse {
+  from {
+    filter: brightness(1);
+  }
+  to {
+    filter: brightness(1.35);
+  }
+}
+
+@keyframes ejayPop {
+  0% {
+    transform: scale(0.92);
+  }
+  80% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ejayShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+}
