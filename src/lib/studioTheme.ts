@@ -1,6 +1,6 @@
 import type { TrackId } from "./types";
 
-export const EJAY_TRACK: Record<
+export const TRACK_THEME: Record<
   TrackId,
   {
     label: string;
@@ -12,28 +12,28 @@ export const EJAY_TRACK: Record<
 > = {
   drums: {
     label: "Drums",
-    blockClass: "ejay-block-drums",
+    blockClass: "mm-block-drums",
     iconBg: "bg-violet-600",
     iconBorder: "border-violet-400",
     categoryAccent: "border-violet-500",
   },
   bass: {
     label: "Bass",
-    blockClass: "ejay-block-bass",
+    blockClass: "mm-block-bass",
     iconBg: "bg-amber-500",
     iconBorder: "border-amber-300",
     categoryAccent: "border-amber-500",
   },
   synth: {
     label: "Synth",
-    blockClass: "ejay-block-synth",
+    blockClass: "mm-block-synth",
     iconBg: "bg-cyan-600",
     iconBorder: "border-cyan-400",
     categoryAccent: "border-cyan-500",
   },
   guitar: {
     label: "Guitar",
-    blockClass: "ejay-block-guitar",
+    blockClass: "mm-block-guitar",
     iconBg: "bg-orange-600",
     iconBorder: "border-orange-400",
     categoryAccent: "border-orange-500",

@@ -42,10 +42,10 @@ export function SequencerApp() {
       onDragStart={(start) => handleDragStart(start.draggableId)}
       onDragEnd={(result: DropResult) => handleDragEnd(result)}
     >
-      <div className="ejay-chrome flex h-screen flex-col">
+      <div className="mm-chrome flex h-screen flex-col">
         <Header />
         {feedback && (
-          <div className="pointer-events-none fixed left-1/2 top-12 z-50 -translate-x-1/2 rounded-full px-4 py-2 text-xs ejay-status-bubble">
+          <div className="pointer-events-none fixed left-1/2 top-12 z-50 -translate-x-1/2 rounded-full px-4 py-2 text-xs mm-status-bubble">
             {feedback.message}
           </div>
         )}

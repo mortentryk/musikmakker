@@ -10,7 +10,7 @@ export function TimelineRuler({ playheadColumn }: TimelineRulerProps) {
   const measures = BLOCK_COUNT * BARS_PER_BLOCK;
 
   return (
-    <div className="ejay-ruler flex h-6 shrink-0 items-stretch pl-[4.5rem] pr-56">
+    <div className="mm-ruler flex h-6 shrink-0 items-stretch pl-[4.5rem] pr-56">
       {Array.from({ length: measures }, (_, i) => {
         const col = Math.floor(i / BARS_PER_BLOCK);
         const isPlayhead = col === playheadColumn;
@@ -18,7 +18,7 @@ export function TimelineRuler({ playheadColumn }: TimelineRulerProps) {
         return (
           <div
             key={i}
-            className={`ejay-ruler-tick flex flex-1 items-center justify-center ${
+            className={`mm-ruler-tick flex flex-1 items-center justify-center ${
               isPlayhead ? "bg-emerald-500/20" : ""
             } ${isBarStart ? "border-l-2 border-[#6b4e12]" : ""}`}
           >
