@@ -4,7 +4,7 @@ import { Draggable, Droppable } from "@hello-pangea/dnd";
 import { Disc3, Headphones, Loader2 } from "lucide-react";
 import { AUDIO_BLOCKS } from "@/lib/constants";
 import { libraryDraggableId } from "@/lib/dndIds";
-import { EJAY_TRACK } from "@/lib/ejayTheme";
+import { TRACK_THEME } from "@/lib/studioTheme";
 import type { AudioBlock } from "@/lib/types";
 
 type LibrarySidebarProps = {
@@ -15,10 +15,10 @@ type LibrarySidebarProps = {
 export function LibrarySidebar({ isAudioReady, onPreviewBlock }: LibrarySidebarProps) {
   return (
     <aside className="flex w-56 shrink-0 flex-col border-l-2 border-[#3a2810] bg-gradient-to-b from-[#c9a050] via-[#b48a2c] to-[#74510f]">
-      <div className="ejay-panel-label border-x-0 border-t-0 px-2 py-1 text-center">
+      <div className="mm-panel-label border-x-0 border-t-0 px-2 py-1 text-center">
         Sample Rack
       </div>
-      <div className="ejay-inset m-1.5 flex flex-1 flex-col overflow-hidden">
+      <div className="mm-inset m-1.5 flex flex-1 flex-col overflow-hidden">
         <p className="border-b border-[#1e3a5f] bg-[#061850]/70 px-2 py-1 text-[9px] font-bold text-[#d9c06a]">
           Klik = preview · Træk klods ind i banen
         </p>
@@ -30,7 +30,7 @@ export function LibrarySidebar({ isAudioReady, onPreviewBlock }: LibrarySidebarP
               className="flex-1 overflow-y-auto p-2"
             >
               {AUDIO_BLOCKS.map((block, index) => {
-                const theme = EJAY_TRACK[block.track];
+                const theme = TRACK_THEME[block.track];
                 const showHeader =
                   index === 0 || AUDIO_BLOCKS[index - 1].track !== block.track;
                 return (
@@ -70,7 +70,7 @@ function LibraryDraggable({
 }: {
   block: AudioBlock;
   index: number;
-  theme: (typeof EJAY_TRACK)[AudioBlock["track"]];
+  theme: (typeof TRACK_THEME)[AudioBlock["track"]];
   isAudioReady: boolean;
   onPreview: () => void;
 }) {
@@ -81,8 +81,8 @@ function LibraryDraggable({
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
-          className={`ejay-cartridge mb-1.5 flex items-center gap-1 rounded-md p-1 ${
-            snapshot.isDragging ? "ejay-cartridge-dragging shadow-2xl" : ""
+          className={`mm-cartridge mb-1.5 flex items-center gap-1 rounded-md p-1 ${
+            snapshot.isDragging ? "mm-cartridge-dragging shadow-2xl" : ""
           }`}
         >
           <button
@@ -92,7 +92,7 @@ function LibraryDraggable({
               onPreview();
             }}
             disabled={!isAudioReady}
-            className="ejay-btn shrink-0 p-1.5"
+            className="mm-btn shrink-0 p-1.5"
             title="Preview"
             aria-label={`Preview ${block.name}`}
           >
@@ -113,7 +113,7 @@ function LibraryDraggable({
   );
 }
 
-function BlockIcon({ theme }: { theme: (typeof EJAY_TRACK)[AudioBlock["track"]] }) {
+function BlockIcon({ theme }: { theme: (typeof TRACK_THEME)[AudioBlock["track"]] }) {
   return (
     <div
       className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-sm border-2 shadow-inner ${theme.iconBg} ${theme.iconBorder}`}

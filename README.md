@@ -1,6 +1,6 @@
 # MusikMakker
 
-eJay-inspireret loop-studio med AI-workflow: byg beats med drag-and-drop, optag guitar/vokal i browseren, og test mock-AI (prompt + mix) uden backend.
+Block-baseret loop-studio med AI-workflow: byg beats med drag-and-drop, optag guitar/vokal i browseren, og test mock-AI (prompt + mix) uden backend.
 
 ## Funktioner
 

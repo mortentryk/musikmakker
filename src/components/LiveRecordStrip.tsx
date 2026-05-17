@@ -33,7 +33,7 @@ export function LiveRecordStrip({
       </span>
 
       {recordingPhase === "counting" && (
-        <span className="text-3xl font-black tabular-nums text-red-400 ejay-count-in">
+        <span className="text-3xl font-black tabular-nums text-red-400 mm-count-in">
           {countInBeat}
         </span>
       )}
@@ -49,7 +49,7 @@ export function LiveRecordStrip({
         type="button"
         onClick={onStartRecording}
         disabled={isBusy}
-        className="ejay-btn-record flex items-center gap-2 rounded-lg px-4 py-2 disabled:opacity-50"
+        className="mm-btn-record flex items-center gap-2 rounded-lg px-4 py-2 disabled:opacity-50"
         aria-label="Optag"
       >
         <Mic className="h-4 w-4" />
@@ -60,7 +60,7 @@ export function LiveRecordStrip({
         type="button"
         onClick={onAiMix}
         disabled={!hasRecording || mixOptimizing}
-        className="ejay-btn flex items-center gap-2 rounded-lg border border-violet-500/40 bg-violet-950/40 px-3 py-2 text-xs disabled:opacity-40"
+        className="mm-btn flex items-center gap-2 rounded-lg border border-violet-500/40 bg-violet-950/40 px-3 py-2 text-xs disabled:opacity-40"
       >
         {mixOptimizing ? (
           <Loader2 className="h-3.5 w-3.5 animate-spin" />

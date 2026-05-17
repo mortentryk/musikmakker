@@ -12,7 +12,7 @@ import {
   Square,
 } from "lucide-react";
 import { BPM, KEY_LABEL, TRACKS } from "@/lib/constants";
-import { EJAY_TRACK } from "@/lib/ejayTheme";
+import { TRACK_THEME } from "@/lib/studioTheme";
 import type { TransportState } from "@/lib/types";
 
 type TransportPanelProps = {
@@ -31,10 +31,10 @@ export function TransportPanel({
   const isPlaying = transportState === "playing";
 
   return (
-    <div className="ejay-inset mx-2 mb-1 flex shrink-0 flex-col gap-2 p-2">
+    <div className="mm-inset mx-2 mb-1 flex shrink-0 flex-col gap-2 p-2">
       <div className="flex flex-wrap items-center justify-center gap-3">
-        <div className="ejay-panel-label rounded px-3 py-1">Start.mix</div>
-        <div className="ejay-transport-pill">
+        <div className="mm-panel-label rounded px-3 py-1">Start.mix</div>
+        <div className="mm-transport-pill">
           <TransportButton label="Loop" disabled>
             <Repeat className="h-3.5 w-3.5" />
           </TransportButton>
@@ -46,7 +46,7 @@ export function TransportPanel({
           </TransportButton>
         <button
           type="button"
-          className="ejay-btn ejay-btn-transport"
+          className="mm-btn mm-btn-transport"
           onClick={onStop}
           disabled={!isAudioReady}
           aria-label="Stop"
@@ -55,7 +55,7 @@ export function TransportPanel({
         </button>
         <button
           type="button"
-          className="ejay-btn ejay-btn-play flex items-center justify-center"
+          className="mm-btn mm-btn-play flex items-center justify-center"
           onClick={onTogglePlayPause}
           disabled={!isAudioReady}
           aria-label={isPlaying ? "Pause" : "Play"}
@@ -75,20 +75,20 @@ export function TransportPanel({
             <SkipForward className="h-3.5 w-3.5" />
           </TransportButton>
         </div>
-        <div className="ejay-panel-label rounded px-3 py-1">
+        <div className="mm-panel-label rounded px-3 py-1">
           {BPM} BPM · Key {KEY_LABEL}
         </div>
       </div>
 
       <div className="flex items-end justify-center gap-3 border-t border-[#1e3a5f] pt-2">
-        <span className="ejay-panel-label self-center rounded px-2 py-1">Volume Controls</span>
+        <span className="mm-panel-label self-center rounded px-2 py-1">Volume Controls</span>
         {TRACKS.map((track, index) => (
           <MixerFader key={track.id} label={track.label} index={index} />
         ))}
         <div className="ml-2 flex flex-col items-center gap-1 border-l border-[#1e3a5f] pl-4">
           <span className="text-[9px] font-black uppercase text-[#f6df85]">Master</span>
-          <div className="ejay-fader-track h-20">
-            <div className="ejay-fader-fill" style={{ height: "78%" }} />
+          <div className="mm-fader-track h-20">
+            <div className="mm-fader-fill" style={{ height: "78%" }} />
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@ function TransportButton({
   return (
     <button
       type="button"
-      className="ejay-btn ejay-btn-transport"
+      className="mm-btn mm-btn-transport"
       disabled={disabled}
       title={label}
       aria-label={label}
@@ -120,14 +120,14 @@ function TransportButton({
 
 function MixerFader({ label, index }: { label: string; index: number }) {
   const track = TRACKS[index];
-  const theme = EJAY_TRACK[track.id];
+  const theme = TRACK_THEME[track.id];
   return (
     <div className="flex flex-col items-center gap-1">
-      <button type="button" className="ejay-btn h-4 w-5 px-0 text-[8px]" title={`Mute ${label}`}>
+      <button type="button" className="mm-btn h-4 w-5 px-0 text-[8px]" title={`Mute ${label}`}>
         M
       </button>
-      <div className="ejay-fader-track">
-        <div className="ejay-fader-fill" style={{ height: `${56 + (index % 3) * 12}%` }} />
+      <div className="mm-fader-track">
+        <div className="mm-fader-fill" style={{ height: `${56 + (index % 3) * 12}%` }} />
       </div>
       <span className={`text-[9px] font-black uppercase ${theme.categoryAccent.replace("border-", "text-")}`}>
         {index + 1}

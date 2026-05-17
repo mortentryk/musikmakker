@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "MusikMakker",
-  description: "eJay + AI loop studio",
+  description: "MusikMakker loop studio",
 };
 
 export default function RootLayout({
